@@ -9,11 +9,12 @@ export default function LoginPage() {
 
   const googleLogin = async () => {
     try {
-      await signInWithPopup(auth, new GoogleAuthProvider());
+      const provider = new GoogleAuthProvider();
+      await signInWithPopup(auth, provider);
       router.push("/home");
     } catch (error) {
-      alert("Google Login Failed");
       console.error(error);
+      alert("Google Login Failed");
     }
   };
 
@@ -36,6 +37,7 @@ export default function LoginPage() {
         </p>
 
         <button
+          type="button"
           onClick={googleLogin}
           className="w-full h-14 rounded-2xl border border-gray-300 flex items-center justify-center gap-3 font-medium hover:bg-gray-50"
         >
@@ -48,7 +50,8 @@ export default function LoginPage() {
         </button>
 
         <button
-          onClick={() => router.push("/otp")}
+          type="button"
+          onClick={() => router.push("/home")}
           className="w-full h-14 rounded-2xl bg-green-700 text-white font-semibold mt-4 hover:bg-green-800"
         >
           Continue with Phone Number
