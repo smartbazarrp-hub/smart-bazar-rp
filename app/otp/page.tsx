@@ -43,7 +43,7 @@ export default function OTPPage() {
 
       window.confirmationResult = confirmation;
       setShowOTP(true);
-      alert("OTP Sent!");
+      alert("OTP Sent");
     } catch (error: any) {
       console.error(error);
       alert(error.message);
@@ -61,8 +61,9 @@ export default function OTPPage() {
   };
 
   return (
-    <main className="min-h-screen flex items-center justify-center bg-gray-100 p-5">
+    <main className="min-h-screen bg-gray-100 flex items-center justify-center p-5">
       <div className="w-full max-w-sm bg-white rounded-3xl shadow-xl p-8">
+
         <h1 className="text-2xl font-bold text-center text-green-700 mb-6">
           Phone Login
         </h1>
@@ -81,7 +82,7 @@ export default function OTPPage() {
 
             <button
               onClick={sendOTP}
-              className="w-full h-12 rounded-xl bg-green-700 text-white"
+              className="w-full h-12 bg-green-700 text-white rounded-xl"
             >
               Send OTP
             </button>
@@ -98,12 +99,13 @@ export default function OTPPage() {
 
             <button
               onClick={verifyOTP}
-              className="w-full h-12 rounded-xl bg-green-700 text-white"
+              className="w-full h-12 bg-green-700 text-white rounded-xl"
             >
               Verify OTP
             </button>
           </>
         )}
+
       </div>
     </main>
   );
